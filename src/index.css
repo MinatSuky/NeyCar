@@ -1,0 +1,553 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #000000;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.fondoPrincipal{
+  mask-image: linear-gradient(
+    black 80%, transparent
+  ) ;
+}
+.fondoPrincipal2{
+  mask-image: radial-gradient(circle, black 45%, transparent 60%) ;
+}
+.fondoPrincipal3{
+mask-image: linear-gradient(to top, black 75%, transparent 80%);
+}
+.fondoPrincipal4{
+  mask-image: linear-gradient(to top, black 70%, transparent 99%);
+  }
+
+.FontNeycar{
+  font-family: "Bebas Neue", sans-serif;
+}
+
+
+/* Define the animation */
+@keyframes slideUp {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Initial state before the animation */
+.fonTexto {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 1s, transform 1s;
+}
+.fonTexto2{
+  font-family: "Inconsolata", monospace;
+}
+.fonTexto3 {
+  font-family: "Archivo Black", sans-serif;
+  line-height: 1.2;
+  text-transform: uppercase;
+  background: linear-gradient(to right, rgb(0, 255, 208), rgb(166, 0, 255));
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+/* Class to trigger the animation */
+.fonTexto.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fonTexto{
+  font-family: "Prompt", sans-serif;
+}
+/* Define the animation */
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Initial state before the animation */
+.logo {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: opacity 1s, transform 1s;
+}
+
+/* Class to trigger the animation */
+.logo.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+html {
+  scroll-behavior: smooth;
+}
+.btn-donate {
+  --clr-font-main: hsla(0 0% 20% / 100);
+  --btn-bg-1: hsla(194 100% 69% / 1);
+  --btn-bg-2: hsla(217 100% 56% / 1);
+  --btn-bg-color: hsla(360 100% 100% / 1);
+  --radii: 0.5em;
+  cursor: pointer;
+  padding: 0.9em 1.4em;
+  min-width: 120px;
+  min-height: 44px;
+  font-size: var(--size, 1rem);
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-weight: 500;
+  transition: 0.8s;
+  background-size: 280% auto;
+  background-image: linear-gradient(325deg, var(--btn-bg-2) 0%, var(--btn-bg-1) 55%, var(--btn-bg-2) 90%);
+  border: none;
+  border-radius: var(--radii);
+  color: var(--btn-bg-color);
+  box-shadow: 0px 0px 20px rgba(71, 184, 255, 0.5), 0px 5px 5px -1px rgba(58, 125, 233, 0.25), inset 4px 4px 8px rgba(175, 230, 255, 0.5), inset -4px -4px 8px rgba(19, 95, 216, 0.35);
+}
+
+.btn-donate:hover {
+  background-position: right top;
+}
+
+.btn-donate:is(:focus, :focus-visible, :active) {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--btn-bg-color), 0 0 0 6px var(--btn-bg-2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-donate {
+    transition: linear;
+  }
+}
+.card {
+  --border-radius: 15px;
+  --border-width: 4px;
+  appearance: none;
+  position: relative;
+  padding: 1em 2em;
+  border: 0;
+  background-color: #000000;
+  font-family: "Roboto", Arial, "Segoe UI", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+  z-index: 2;
+  border-radius: 20px;
+ }
+ 
+ .card::after {
+  --m-i: linear-gradient(#000, #000);
+  --m-o: content-box, padding-box;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding: var(--border-width);
+  border-radius: var(--border-radius);
+  background-image: conic-gradient(
+     #488cfb,
+     #29dbbc,
+     #ddf505,
+     #ff9f0e,
+     #e440bb,
+     #655adc,
+     #488cfb
+   );
+  -webkit-mask-image: var(--m-i), var(--m-i);
+  mask-image: var(--m-i), var(--m-i);
+  -webkit-mask-origin: var(--m-o);
+  mask-origin: var(--m-o);
+  -webkit-mask-clip: var(--m-o);
+  mask-composite: exclude;
+  -webkit-mask-composite: destination-out;
+  filter: hue-rotate(0);
+  animation: rotate-hue linear 500ms infinite;
+  animation-play-state: paused;
+ }
+ 
+ .cardAnimation:hover::after {
+  animation-play-state: running;
+ }
+ 
+ @keyframes rotate-hue {
+  to {
+   filter: hue-rotate(1turn);
+  }
+ }
+ 
+ .cardAnimation,
+ .cardAnimation::after {
+  box-sizing: border-box;
+ }
+ 
+ .cardAnimation:active {
+  --border-width: 5px;
+ }
+/* Define the animation */
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Initial state before the animation */
+.cardAnimation {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: opacity 1s, transform 1s;
+}
+
+/* Class to trigger the animation */
+.cardAnimation.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+
+.card3 {
+  position: relative;
+  width: 50%;
+  height: 50%;
+  background-color: #2a2828;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: default;
+}
+
+.card3:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px #3cc1f5;
+  background-color: #47c3a2;
+  color: #ffffff;
+}
+
+.card3__content {
+  position: absolute;
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #222222;
+  transform: rotateX(-90deg) translateZ(0); /* Añadido translateZ(0) */
+  transform-origin: bottom;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  backface-visibility: hidden;
+  will-change: transform; /* Añadido */
+}
+
+.card3:hover .card3__content {
+  transform: rotateX(0deg) translateZ(0); /* Añadido translateZ(0) */
+}
+
+.card3__title,
+.card3__description {
+  margin: 0;
+  padding-left: 5px;
+  font-weight: 500;
+  backface-visibility: hidden;
+  will-change: transform; /* Añadido */
+  -webkit-font-smoothing: antialiased; /* Añadido */
+  -moz-osx-font-smoothing: grayscale; /* Añadido */
+}
+
+.card3__title {
+  font-size: 34px;
+}
+
+.card3__description {
+  margin: 10px 0 0;
+  font-size: 19px;
+  line-height: 1.4;
+}
+
+.card3:hover svg {
+  scale: 0;
+}
+
+
+
+.btn1 {
+  width: 130px;
+  height: 40px;
+  font-size: 1.1em;
+  cursor: pointer;
+  background-color: #171717;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  transition: all .4s;
+ }
+ 
+ .btn1:hover {
+  border-radius: 5px;
+  transform: translateY(-10px);
+  box-shadow: 0 7px 0 -2px #ef1616,
+   0 15px 0 -4px #39a2db,
+   0 16px 10px -3px #39a2db;
+ }
+ 
+ .btn1:active {
+  transition: all 0.2s;
+  transform: translateY(-5px);
+  box-shadow: 0 2px 0 -2px #f859e3,
+   0 8px 0 -4px #39a2db,
+   0 12px 10px -3px #39a2db;
+ }
+/* From Uiverse.io by david-mohseni */ 
+.wrapper {
+  display: inline-flex;
+  list-style: none;
+  height: 120px;
+  width: 100%;
+  padding-top: 40px;
+  font-family: "Poppins", sans-serif;
+  justify-content: center;
+}
+
+.wrapper .icon {
+  position: relative;
+  background: #fff;
+  border-radius: 50%;
+  margin: 10px;
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip {
+  position: absolute;
+  top: 0;
+  font-size: 14px;
+  background: #fff;
+  color: #fff;
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip::before {
+  position: absolute;
+  content: "";
+  height: 8px;
+  width: 8px;
+  background: #fff;
+  bottom: -3px;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .icon:hover .tooltip {
+  top: -45px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip {
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper .facebook:hover,
+.wrapper .facebook:hover .tooltip,
+.wrapper .facebook:hover .tooltip::before {
+  background: #1877f2;
+  color: #fff;
+}
+
+.wrapper .twitter:hover,
+.wrapper .twitter:hover .tooltip,
+.wrapper .twitter:hover .tooltip::before {
+  background: #1da1f2;
+  color: #fff;
+}
+
+.wrapper .instagram:hover,
+.wrapper .instagram:hover .tooltip,
+.wrapper .instagram:hover .tooltip::before {
+  background: #e4405f;
+  color: #fff;
+}
+.color{
+  color: white;
+}
+/* From Uiverse.io by gharsh11032000 */ 
+.cssbuttons-io-button {
+  background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+  color: white;
+  font-family: inherit;
+  padding: 0.35em;
+  padding-left: 1.2em;
+  font-size: 17px;
+  border-radius: 10em;
+  border: none;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  height: 2.8em;
+  padding-right: 3.3em;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 500;
+  box-shadow: 0 0 1.6em rgba(183, 33, 255,0.3),0 0 1.6em hsla(191, 98%, 56%, 0.3);
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.cssbuttons-io-button .icon {
+  background: white;
+  margin-left: 1em;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.2em;
+  width: 2.2em;
+  border-radius: 10em;
+  right: 0.3em;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.cssbuttons-io-button:hover .icon {
+  width: calc(100% - 0.6em);
+}
+
+.cssbuttons-io-button .icon svg {
+  width: 1.1em;
+  transition: transform 0.3s;
+  color: #B721FF;
+}
+
+.cssbuttons-io-button:hover .icon svg {
+  transform: translateX(0.1em);
+}
+
+.cssbuttons-io-button:active .icon {
+  transform: scale(0.9);
+}
+.textResponsi{
+  font-size: clamp(20px, 6vw, 72px );
+}
+.textResponsi1{
+  font-size: clamp(12px, 1.8vw, 20px );
+  margin: 0 10px;
+}
+.textResponsi3{
+  font-size: clamp(20px, 2vw, 36px );
+}
+.textResponsi4{
+  font-size: clamp(20px, 6vw, 45px );
+  font-size: 800;
+}
+.cont1{
+  gap: 40px;
+}
+.fondoprin{
+  height: 100vh;
+}
+/* -------------------------- portatil l----------------------------------- */
+@media (max-width: 1440px) {
+  .posic{
+    top: 180px;
+   }
+   .seccion2{
+    margin-top: 20px;
+    margin-left: 8% ;
+    margin-right: 8% ;
+   }
+}
+/* -------------------------- portatil ----------------------------------- */
+@media (max-width: 1024px) {
+   .opciones{
+    display: none;
+   }
+   .posic{
+    top: 130px;
+   }
+   .fondoprin{
+    height: 70vh;
+  }
+  .seccion2{
+    flex-direction: column;
+  }
+  .cont2{
+    width: 100%;
+  }
+  .fondoPrincipal2{
+    width: 100%;
+  }
+  .seccion3{
+    margin-top: 50px;
+  }
+}
+/* -------------------------- tablet ----------------------------------- */
+@media (max-width: 768px) {
+  .textResponsi1{
+    text-align: center;
+  }
+  .cont1{
+    flex-direction: column;
+    gap: 10px;
+  }
+  .fondoprin{
+    height: 70vh;
+  }
+  .cont3-1{
+    flex-direction: column;
+ }
+}
+/* aparte */
+@media (max-width: 1296px) {
+  .cont3{
+     flex-direction: column;
+  }
+}
