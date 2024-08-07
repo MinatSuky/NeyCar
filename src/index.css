@@ -265,15 +265,15 @@ html {
   padding: 20px;
   box-sizing: border-box;
   background-color: #222222;
-  transform: rotateX(-90deg) translateZ(0); /* Añadido translateZ(0) */
+  transform: rotateX(-90deg) translateZ(0);
   transform-origin: bottom;
   transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   backface-visibility: hidden;
-  will-change: transform; /* Añadido */
+  will-change: transform; 
 }
 
 .card3:hover .card3__content {
-  transform: rotateX(0deg) translateZ(0); /* Añadido translateZ(0) */
+  transform: rotateX(0deg) translateZ(0); 
 }
 
 .card3__title,
@@ -282,9 +282,9 @@ html {
   padding-left: 5px;
   font-weight: 500;
   backface-visibility: hidden;
-  will-change: transform; /* Añadido */
-  -webkit-font-smoothing: antialiased; /* Añadido */
-  -moz-osx-font-smoothing: grayscale; /* Añadido */
+  will-change: transform; 
+  -webkit-font-smoothing: antialiased; 
+  -moz-osx-font-smoothing: grayscale; 
 }
 
 .card3__title {
@@ -488,12 +488,41 @@ html {
   font-size: clamp(20px, 6vw, 45px );
   font-size: 800;
 }
+.textResponsi5{
+  font-size: clamp(20px, 6vw, 48px );
+}
 .cont1{
   gap: 40px;
 }
 .fondoprin{
   height: 100vh;
 }
+/* From Uiverse.io by Tiagoadag */ 
+.cart {
+ 
+  background-image: linear-gradient(163deg, #ff0000 0%, #3700ff 100%);
+  border-radius: 20px;
+  transition: all .3s;
+ }
+ 
+ .cart1 {
+  background-color: #1a1a1a;
+  border-radius: 10px;
+  transition: all .2s;
+ }
+ 
+ .cart1:hover {
+  transform: scale(0.98);
+  border-radius: 20px;
+  cursor: pointer;
+ }
+ 
+ .cart:hover {
+  box-shadow: 0px 0px 30px 5px rgba(187, 41, 255, 0.537);
+ }
+ .seccion5{
+  background: linear-gradient(0deg, #141414 0%, #000000 90%);
+ }
 /* -------------------------- portatil l----------------------------------- */
 @media (max-width: 1440px) {
   .posic{
@@ -504,6 +533,13 @@ html {
     margin-left: 8% ;
     margin-right: 8% ;
    }
+   /* .seccion4{
+    top: 300px;
+   } */
+    .img3{
+      height: 150vh;
+    }
+  
 }
 /* -------------------------- portatil ----------------------------------- */
 @media (max-width: 1024px) {
@@ -544,10 +580,20 @@ html {
   .cont3-1{
     flex-direction: column;
  }
+ .img3{
+  height: 250vh;
+}
+ 
 }
 /* aparte */
 @media (max-width: 1296px) {
   .cont3{
      flex-direction: column;
   }
+ .contenedor5{
+  flex-direction: column;
+ }
+ .cont5{
+  width: 100%;
+ }
 }

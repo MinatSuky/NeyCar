@@ -47,10 +47,10 @@ function Correos() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div className='flex justify-center gap-8 mt-3'>
+    <form className='w-[90%]' onSubmit={handleSubmit}>
+      <div className='flex justify-center gap-8 mt-3 contenedor5'>
         <input
-          className='py-4 px-4 logo color'
+          className='py-4 px-4 w-[100%] fonTexto color'
           type="text"
           name="name"
           placeholder='Nombre...'
@@ -58,7 +58,7 @@ function Correos() {
           onChange={handleChange}
         />
         <input
-          className='py-4 px-4 logo color'
+          className='py-4 px-4 w-[100%] fonTexto color'
           type="email"
           name="email"
           placeholder='Correo...'
@@ -67,14 +67,14 @@ function Correos() {
         />
       </div>
       <input
-        className='py-4 px-4 mt-8 w-[100%] pb-[19%] logo color'
+        className='py-4 px-4 mt-8 w-[100%] pb-[10%] fonTexto color'
         type="text"
         name="idea"
         placeholder='Tu Idea...'
         value={formData.idea}
         onChange={handleChange}
       />
-      <button className="cssbuttons-io-button mt-5 logo" type="submit">
+      <button className="cssbuttons-io-button mt-10 fonTexto" type="submit">
         ENVIAR
         <div className="icon">
           <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

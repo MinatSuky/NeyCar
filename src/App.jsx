@@ -4,8 +4,6 @@ import './App.css'
 import logo from "../src/IMGS/NC.1.png"
 import fondo1 from "../src/IMGS/fondo 3.jpg"
 import lateral from "../src/IMGS/lateral 2.jpg"
-import fondo2 from "../src/IMGS/fondo 7.jpg"
-import fondo3 from "../src/IMGS/fondo 9.jpg"
 import img1 from "../src/IMGS/flores.png"
 import img2 from "../src/IMGS/HYDRA.png"
 import img3 from "../src/IMGS/metaverse.png"
@@ -43,54 +41,7 @@ function App() {
   }, []);
 
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-          }
-        });
-      },
-      { threshold: 0.1 } // Trigger when 10% of the element is visible
-    );
-
-    const elements = document.querySelectorAll('.fonTexto');
-    elements.forEach(element => {
-      observer.observe(element);
-    });
-
-    return () => {
-      elements.forEach(element => {
-        observer.unobserve(element);
-      });
-    };
-  }, []);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-          }
-        });
-      },
-      { threshold: 0.1 } // Trigger when 10% of the element is visible
-    );
-
-    // Select elements to be observed
-    const elements = document.querySelectorAll('.card');
-    elements.forEach(element => {
-      observer.observe(element);
-    });
-
-    return () => {
-      elements.forEach(element => {
-        observer.unobserve(element);
-      });
-    };
-  }, []);
+ 
 
 
 
@@ -98,7 +49,7 @@ function App() {
   return (
 
     <div className='padre'>
-      <div className="menu w-full h-[10vh] backdrop-blur-sm bg-black/30 flex justify-around items-center fixed z-20">
+      <div className="menu fonTexto w-full h-[10vh] backdrop-blur-sm bg-black/30 flex justify-around items-center fixed z-20">
         <div className='border-2 w-fit cursor-default'>
           <p className='text-white FontNeycar font-bold textResponsi3 px-3 py-2'><span className='bg-white text-black px-1 py-0'>NEYCAR</span> STUDIOS</p>
         </div>
@@ -114,35 +65,35 @@ function App() {
       <seccion className='seccion1 cursor-default '>
         <div className='relative flex justify-center items-center bg-black/90'>
           <img className='opacity-30 fondoPrincipal w-full fondoprin' src={fondo1} alt="fondoPrincipal" />
-         <div className='absolute posic'>
-         <div className='flex flex-col items-center text-white'>
-            <p className='text-center textResponsi font-bold'>
-              Impulsando a la Innovación <br /> Digital en la Web
-            </p>
-            <p className='mt-8 textResponsi1 font-medium'>
-              Da un paso hacia el futuro integrando tu negocion sin problemas al mundo digital
-            </p>
+          <div className='absolute posic'>
+            <div className='flex flex-col items-center text-white'>
+              <p className='text-center textResponsi font-bold fonTexto'>
+                Impulsando a la Innovación <br /> Digital en la Web
+              </p>
+              <p className='mt-8 textResponsi1 font-medium fonTexto'>
+                Da un paso hacia el futuro integrando tu negocion sin problemas al mundo digital
+              </p>
 
-            <div className='flex items-center  mt-10 cont1'>
-              <a href="#Quienes-Somos?">
-                <button className='flex whitespace-nowrap bg-emerald-800 hover:bg-emerald-500 hover:shadow-md hover:shadow-emerald-300/50 px-8 py-4 duration-100 rounded-xl font-bold text-lg'>
-                  Dar el primer paso
-                  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 256 256">
-                    <path fill="#ffffff" d="m208.49 184.49l-48 48a12 12 0 0 1-17 0l-48-48a12 12 0 0 1 17-17L140 195v-67a84.09 84.09 0 0 0-84-84a12 12 0 0 1 0-24a108.12 108.12 0 0 1 108 108v67l27.51-27.52a12 12 0 0 1 17 17Z" />
-                  </svg>
-                </button>
-              </a>
-              <div>
-                <a href="#contactanos">
-                  <button className="btn-donate">
-                    <p className='text-lg'>Alguna idea?</p>
+              <div className='flex items-center  mt-10 cont1 fonTexto'>
+                <a href="#Quienes-Somos?">
+                  <button className='flex  whitespace-nowrap bg-emerald-800 hover:bg-emerald-500 hover:shadow-md hover:shadow-emerald-300/50 px-8 py-4 duration-100 rounded-xl font-bold text-lg'>
+                    Dar el primer paso
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 256 256">
+                      <path fill="#ffffff" d="m208.49 184.49l-48 48a12 12 0 0 1-17 0l-48-48a12 12 0 0 1 17-17L140 195v-67a84.09 84.09 0 0 0-84-84a12 12 0 0 1 0-24a108.12 108.12 0 0 1 108 108v67l27.51-27.52a12 12 0 0 1 17 17Z" />
+                    </svg>
                   </button>
                 </a>
+                <div>
+                  <a href="#contactanos">
+                    <button className="btn-donate">
+                      <p className='text-lg'>Alguna idea?</p>
+                    </button>
+                  </a>
+                </div>
               </div>
-            </div>
 
+            </div>
           </div>
-         </div>
         </div>
       </seccion>
       {/* seccion 2 */}
@@ -162,12 +113,11 @@ function App() {
         </div>
       </seccion>
       {/* seccion 3 */}
-      <section id="Nuestros-Servicios" className='seccion3 relative flex justify-center mt-32'>
-        <img className='w-full fondoPrincipal3 opacity-40' src={fondo2} alt="" />
-        <div className='absolute mt-24 mx-[2%] '>
+      <section id="Nuestros-Servicios" className=''>
+        <div className='mt-24 mx-[2%] '>
           <p className='text-white textResponsi fonTexto font-bold text-center '>Etapas y servisios para el desarrollo <br /> de tu paguina web</p>
           <div className='flex gap-10 mt-28 cont3'>
-            <div className='card cardAnimation w-full flex cont3-1 gap-5'>
+            <div className='card fonTexto w-full flex cont3-1 gap-5'>
               <div className='flex items-center '>
                 <svg xmlns="http://www.w3.org/2000/svg" width="108" height="108" viewBox="0 0 48 48"><defs><mask id="IconifyId1910af3e5109afd8a312"><g fill="none" stroke="#fff" stroke-width="2"><circle cx="24" cy="11" r="7" fill="#555" stroke-linecap="round" stroke-linejoin="round" /><path stroke-linecap="round" stroke-linejoin="round" d="M4 41c0-8.837 8.059-16 18-16" /><circle cx="34" cy="34" r="9" fill="#555" /><path stroke-linecap="round" stroke-linejoin="round" d="M33 31v4h4" /></g></mask></defs><path fill="#ffffff" d="M0 0h48v48H0z" mask="url(#IconifyId1910af3e5109afd8a312)" /></svg>
               </div>
@@ -178,7 +128,7 @@ function App() {
                 </p>
               </div>
             </div>
-            <div className='card logo flex cont3-1 gap-5 w-full'>
+            <div className='card fonTexto flex cont3-1 gap-5 w-full'>
               <div className='flex items-center'>
                 <svg xmlns="http://www.w3.org/2000/svg" width="108" height="108" viewBox="0 0 48 48"><defs><mask id="IconifyId1910af3e5109afd8a314"><g fill="none"><path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M40 16.398V6a2 2 0 0 0-2-2H10a2 2 0 0 0-2 2v36a2 2 0 0 0 2 2h10" /><path stroke="#fff" stroke-linecap="round" stroke-width="3" d="M16 14h13m-13 7h5" /><circle cx="34" cy="34" r="10" fill="#555" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" transform="rotate(90 34 34)" /><path stroke="#fff" stroke-linecap="round" stroke-width="4" d="M34 36v3" /><circle cx="34" cy="30" r="2" fill="#fff" /></g></mask></defs><path fill="#ffffff" d="M0 0h48v48H0z" mask="url(#IconifyId1910af3e5109afd8a314)" /></svg>
               </div>
@@ -191,7 +141,7 @@ function App() {
             </div>
           </div>
           <div className='flex gap-10 mt-10 cont3'>
-            <div className='card cardAnimation w-full flex cont3-1 gap-5'>
+            <div className='card fonTexto w-full flex cont3-1 gap-5'>
               <div className='flex items-center'>
                 <svg xmlns="http://www.w3.org/2000/svg" width="108" height="108" viewBox="0 0 48 48"><defs><mask id="IconifyId1910af3e5109afd8a1319"><g fill="none" stroke="#fff" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M28.367 36H24l-9-4.96l-10.991 4.042l3.002 5.944l7.072-2.953C20.7 42.024 24.727 44 26.165 44c1.438 0 7.383-2.667 17.835-8" /><path fill="#555" fill-rule="evenodd" stroke-linejoin="round" d="M28.992 26.988v-4.67c1.1-.457 2.543-1.125 3.372-1.954a9 9 0 1 0-12.728 0c.829.829 2.264 1.497 3.364 1.953c.006.335.006 1.892 0 4.67z" clip-rule="evenodd" /><path stroke-linecap="round" d="m12 21l1-1m27 1l-1-1M15 5l-1-1m23 1l1-1m3 8h-1m-28 0h-1" /></g></mask></defs><path fill="#ffffff" d="M0 0h48v48H0z" mask="url(#IconifyId1910af3e5109afd8a1319)" /></svg>
               </div>
@@ -202,7 +152,7 @@ function App() {
                 </p>
               </div>
             </div>
-            <div className='card logo flex gap-5 cont3-1 w-full'>
+            <div className='card fonTexto flex gap-5 cont3-1 w-full'>
               <div className='flex items-center'>
                 <svg xmlns="http://www.w3.org/2000/svg" width="108" height="108" viewBox="0 0 48 48"><defs><mask id="IconifyId1910af3e5109afd8a1323"><g fill="none" stroke="#fff" stroke-width="2"><path fill="#555" stroke-linejoin="round" d="M44 5H4v12h40z" /><path stroke-linecap="round" stroke-linejoin="round" d="m4 41.03l12.176-12.3l6.579 6.3L30.798 27l4.48 4.368" /><path stroke-linecap="round" d="M44 16.172v26m-40-26v14M13.016 43H44M17 11h21m-28-.003h1" /></g></mask></defs><path fill="#ffffff" d="M0 0h48v48H0z" mask="url(#IconifyId1910af3e5109afd8a1323)" /></svg>
               </div>
@@ -217,111 +167,35 @@ function App() {
         </div>
       </section>
       {/* seccion 4 */}
-      {/* <section id='Portafolio' className='relative flex flex-col'>
-        <img className='fondoPrincipa fondoPrincipal w-full' src={fondo3} alt="" />
-        <div className="contenedor absolute mt-36 mx-28">
-          <p className='text-white text-7xl fonTexto font-bold'>Nuestro Portafolio</p>
-          <p className='mt-5 text-slate-400 text-lg fonTexto'>Echale un vistaso a nustras obras anteriores para que te sientas mas seguro de nuestro trabajo</p>
-          <div className='mt-20 flex gap-7'>
-            <section3 id="card1" className="card3 fonTexto">
-              <img src={img1} alt="" />
-              <div className="card3__content">
-                <p className="card3__title fonTexto2">FLORES DE MARIA 2</p>
-                <p className="card3__description">
-                  Esta es la paguina web que realizamos para un conjunto cerrado en la ciudad de valledupar-cesar, acorde a la preferencia del cliente
-                </p>
-                <div className='mt-5'>
-                  <a target="_blank" href="https://fores-marias2.vercel.app/">
-                    <button className="btn1">Ver Sitio!</button>
-                  </a>
-                </div>
-              </div>
-            </section3>
-            <section3 id="card1" className="card3 fonTexto">
-              <img src={img2} alt="" />
-              <div className="card3__content">
-                <p className="card3__title fonTexto2">HYDRA VR</p>
-                <p className="card3__description">
-                  Esta es una landing Pege que realizamos para un negocio de gafas de realidad virtual.
-                </p>
-                <div className='mt-5'>
-                  <a target="_blank" href="https://hydra-olive.vercel.app/">
-                    <button className="btn1">Ver Sitio!</button>
-                  </a>
-                </div>
-              </div>
-            </section3>
-            <section3 id="card1" className="card3 fonTexto ">
-              <img src={img3} alt="" />
-              <div className="card3__content">
-                <p className="card3__title fonTexto2">METAVERSE</p>
-                <p className="card3__description">
-                  Esta es una landing Pege que realizamos para un negocio de gafas de realidad virtual enfocada mas en los videojuegos y lo tridimencional.
-                </p>
-                <div className='mt-5'>
-                  <a target="_blank" href="https://metaverse-jade-six.vercel.app/">
-                    <button className="btn1">Ver Sitio!</button>
-                  </a>
-                </div>
-              </div>
-            </section3>
-          </div>
-          <div className='mt-10 flex gap-7'>
-            <section3 id="card1" className="card3 fonTexto">
-              <img src={img4} alt="" />
-              <div className="card3__content">
-                <p className="card3__title fonTexto2">SPOTIFY-REPLI</p>
-                <p className="card3__description">
-                  Esta es la paguina web que realizada por unos de los miembros de nuestro equipo de desarrollo, Como proyecto personal de superacion
-                </p>
-                <div className='mt-5'>
-                  <a target="_blank" href="https://spotify-repli.vercel.app/">
-                    <button className="btn1">Ver Sitio!</button>
-                  </a>
-                </div>
-              </div>
-            </section3>
-            <section3 id="card1" className="card3 fonTexto">
-              <img src={img1} alt="" />
-              <div className="card3__content">
-                <p className="card3__title fonTexto2">FLORES DE MARIA 2</p>
-                <p className="card3__description">
-                  Esta es la paguina web que realizamos para un conjunto cerrado en la ciudad de valledupar-cesar, acorde a la preferencia del cliente
-                </p>
-                <div className='mt-5'>
-                  <a target="_blank" href="https://fores-marias2.vercel.app/">
-                    <button className="btn1">Ver Sitio!</button>
-                  </a>
-                </div>
-              </div>
-            </section3>
-            <section3 id="card1" className="card3 fonTexto">
-              <img src={img1} alt="" />
-              <div className="card3__content">
-                <p className="card3__title fonTexto2">FLORES DE MARIA 2</p>
-                <p className="card3__description">
-                  Esta es la paguina web que realizamos para un conjunto cerrado en la ciudad de valledupar-cesar, acorde a la preferencia del cliente
-                </p>
-                <div className='mt-5'>
-                  <a target="_blank" href="https://fores-marias2.vercel.app/">
-                    <button className="btn1">Ver Sitio!</button>
-                  </a>
-                </div>
-              </div>
-            </section3>
+      <section id='Portafolio' className='mt-32'>
+        <div className='mx-[2%] '>
+          <p className='textResponsi text-white font-bold text-center fonTexto'>Nustro Portafolio</p>
+          <div className="container4 flex flex-wrap justify-center gap-6 mt-10">
+            <div className="cont4 w-[500px] cart fonTexto">
+             <a href="https://fores-marias2.vercel.app/"> <img className="rounded-xl object-cover w-full h-full cart1" src={img1} alt="" /></a>
+            </div>
+            <div className="cont4 w-[500px] cart fonTexto">
+              <a href="https://hydra-olive.vercel.app/"><img className="rounded-xl object-cover w-full h-full cart1" src={img2} alt="" /></a>
+            </div>
+            <div className="cont4 w-[500px] cart fonTexto">
+             <a href="https://metaverse-jade-six.vercel.app/"> <img className="rounded-xl object-cover w-full h-full cart1" src={img3} alt="" /></a>
+            </div>
+            <div className="cont4 w-[500px] cart fonTexto">
+             <a href="https://spotify-repli.vercel.app/"> <img className="rounded-xl object-cover w-full h-full cart1" src={img4} alt="" /></a>
+            </div>
           </div>
         </div>
-      </section> */}
+      </section>
       {/* seccion 5 */}
-      {/* <section id='contactanos' className='mt-20'>
-        <div className="w-full flex">
-          <div className='w-[50%] flex flex-col items-center'>
+      <section id='contactanos' className='mt-56 seccion5'>
+        <div className="w-full flex contenedor5">
+          <div className='w-[50%] cont5 flex flex-col items-center'>
             <div className='flex items-center'>
-              <img className='w-28 logo flex justify-start items-start' src={logo} alt="" />
-              <p className='text-white  font-semibold text-3xl px-3 py-2 logo'>NEYCAR STUDIOS</p>
+              <img className='w-28 fonTexto flex justify-start items-start' src={logo} alt="" />
+              <p className='text-white font-semibold text-3xl px-3 py-2 fonTexto textResponsi5'>NEYCAR STUDIOS</p>
             </div>
-            <p className='text-white text-5xl uppercase fonTexto3 logo'> ¿Que ideas tienes <br /> para  tu Negocion?  </p>
-            <ul class="wrapper logo">
+            <p className='text-white textResponsi5  text-center uppercase fonTexto3 '> ¿Que ideas tienes <br /> para  tu Negocion?  </p>
+            <ul class="wrapper fonTexto">
               <li class="icon facebook">
                 <span class="tooltip">Facebook</span>
                 <svg
@@ -366,17 +240,18 @@ function App() {
             </ul>
 
           </div>
-          <div className='w-[50%] flex flex-col items-center'>
+          <div className='w-[50%] flex flex-col items-center cont5'>
             <p className="text-white fonTexto text-2xl">Contactanos</p>
             <Correos/>           
           </div>
         </div>
-      </section> */}
-      {/* <footer className="footer flex justify-center mt-20 p-4">
+        <footer className="footer flex justify-center mt-20 p-4">
         <aside>
           <p className='text-white'>Copyright © {new Date().getFullYear()} NEYCAR STUDIOS - All right reserved</p>
         </aside>
-      </footer> */}
+      </footer>
+      </section>
+      
     </div>
   )
 }
